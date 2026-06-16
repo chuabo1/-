@@ -24,7 +24,7 @@ function categoryTitle(name) {
 
 function cartSheetHeight(itemCount) {
   const rowsHeight = Math.max(1, itemCount) * 136;
-  return Math.min(1080, Math.max(720, 500 + rowsHeight));
+  return Math.min(1080, Math.max(520, 372 + rowsHeight));
 }
 
 Page({
