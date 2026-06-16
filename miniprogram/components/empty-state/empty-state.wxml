@@ -1,0 +1,6 @@
+<view class="state">
+  <view class="state-icon">{{icon}}</view>
+  <view class="state-title">{{title}}</view>
+  <view class="state-desc">{{desc}}</view>
+  <button wx:if="{{buttonText}}" class="state-btn" bindtap="onAction">{{buttonText}}</button>
+</view>

@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "点单",
+  "usingComponents": {
+    "dish-row": "../../components/dish-row/dish-row",
+    "product-summary-row": "../../components/product-summary-row/product-summary-row",
+    "quantity-stepper": "../../components/quantity-stepper/quantity-stepper",
+    "spec-selector": "../../components/spec-selector/spec-selector",
+    "bottom-sheet": "../../components/bottom-sheet/bottom-sheet",
+    "cart-bar": "../../components/cart-bar/cart-bar",
+    "empty-state": "../../components/empty-state/empty-state",
+    "error-state": "../../components/error-state/error-state"
+  }
+}

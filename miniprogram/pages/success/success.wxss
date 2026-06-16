@@ -1,0 +1,149 @@
+.menu-head {
+  min-height: 240rpx;
+  padding: calc(env(safe-area-inset-top) + 24rpx) 32rpx 32rpx;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.logo-badge {
+  width: 80rpx;
+  height: 80rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14rpx;
+  line-height: 18rpx;
+  transform: rotate(-12deg);
+}
+
+.brand-word {
+  font-size: 44rpx;
+  line-height: 64rpx;
+  font-weight: 600;
+}
+
+.head-meta {
+  margin-top: 16rpx;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  color: #ffe3d5;
+  font-size: 20rpx;
+  line-height: 32rpx;
+}
+
+.table-pill {
+  padding: 8rpx 16rpx;
+  border-radius: var(--radius-pill);
+  color: #ffffff;
+  background: #2a2522;
+  font-weight: 600;
+}
+
+.content {
+  padding: 32rpx;
+}
+
+.success-hero {
+  padding: 48rpx 0 32rpx;
+  text-align: center;
+}
+
+.success-check {
+  width: 72rpx;
+  height: 72rpx;
+  margin: 0 auto 16rpx;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: var(--color-ok);
+}
+
+.check-mark {
+  width: 22rpx;
+  height: 38rpx;
+  margin-top: -8rpx;
+  border-right: 6rpx solid #ffffff;
+  border-bottom: 6rpx solid #ffffff;
+  transform: rotate(42deg);
+}
+
+.success-title {
+  color: var(--color-ink);
+  font-size: 44rpx;
+  line-height: 60rpx;
+  font-weight: 600;
+}
+
+.success-sub {
+  margin-top: 8rpx;
+  color: var(--color-muted);
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+
+.info-card {
+  padding: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.info-row {
+  min-height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-ink);
+  font-size: 28rpx;
+  line-height: 44rpx;
+  font-weight: 600;
+}
+
+.divider {
+  height: 1rpx;
+  margin: 16rpx 0;
+  background: rgba(34, 34, 34, 0.04);
+}
+
+.card-title {
+  color: var(--color-ink);
+  font-size: 28rpx;
+  line-height: 44rpx;
+  font-weight: 600;
+}
+
+.order-line {
+  margin-top: 16rpx;
+  min-height: 72rpx;
+  border-bottom: 1rpx solid rgba(34, 34, 34, 0.04);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 80rpx 112rpx;
+  align-items: center;
+  gap: 16rpx;
+  font-size: 28rpx;
+  line-height: 44rpx;
+}
+
+.order-line text:last-child,
+.total {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-align: right;
+}
+
+.total {
+  margin-top: 24rpx;
+  font-size: 36rpx;
+  line-height: 44rpx;
+}

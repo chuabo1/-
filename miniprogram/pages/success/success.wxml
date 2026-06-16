@@ -1,0 +1,42 @@
+<view class="page">
+  <view class="menu-head" style="{{brandHeadStyle}}">
+    <view class="brand-row">
+      <view class="logo-badge">SUNIPER<br />TABLE</view>
+      <view class="brand-word">万万烧烤</view>
+    </view>
+    <view class="head-meta">
+      <view class="table-pill">{{tableNo}}桌</view>
+      <text>下单成功</text>
+    </view>
+  </view>
+  <view class="content">
+    <view class="success-hero">
+      <view class="success-check">
+        <view class="check-mark"></view>
+      </view>
+      <view class="success-title">下单成功</view>
+      <view class="success-sub">用餐后到前台结账</view>
+    </view>
+    <view class="card info-card">
+      <view class="info-row">
+        <text>桌号</text>
+        <text>{{tableNo}}桌</text>
+      </view>
+      <view class="divider"></view>
+      <view class="info-row">
+        <text>订单号</text>
+        <text>{{orderNo}}</text>
+      </view>
+    </view>
+    <view class="card info-card">
+      <view class="card-title">已点菜品</view>
+      <view wx:for="{{items}}" wx:key="key" class="order-line">
+        <text>{{item.displayName}}</text>
+        <text>x{{item.quantity}}</text>
+        <text>¥{{item.subtotal}}</text>
+      </view>
+      <view class="total">合计 ¥{{total}}</view>
+    </view>
+    <button class="primary-btn" bindtap="continueOrder">继续加菜</button>
+  </view>
+</view>

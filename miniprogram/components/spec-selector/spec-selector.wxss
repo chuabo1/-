@@ -1,0 +1,23 @@
+.spec-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.spec-pill {
+  min-height: 48rpx;
+  padding: 0 24rpx;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-dark);
+  background: var(--color-tag);
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+
+.spec-pill.active {
+  color: #ffffff;
+  background: #2a2522;
+}

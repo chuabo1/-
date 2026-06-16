@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "菜单管理",
+  "usingComponents": {
+    "admin-form-section": "../../components/admin-form-section/admin-form-section"
+  }
+}

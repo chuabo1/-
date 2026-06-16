@@ -1,0 +1,35 @@
+<view class="page">
+  <view class="brand-head" style="{{brandHeadStyle}}">
+    <view class="brand-title">门店管理</view>
+    <view class="brand-subtitle">头图配置 · 点单文案 · 桌码管理</view>
+  </view>
+  <view class="content">
+    <admin-form-section title="门店头图" desc="用于顾客点单页顶部展示，建议上传 16:9 横图">
+      <view class="field-label compact">门店名称</view>
+      <input class="input" value="{{storeForm.name}}" bindinput="onStoreInput" data-field="name" />
+      <view class="field-label">头图 URL</view>
+      <input class="input" value="{{storeForm.headerImageUrl}}" placeholder="https:// 或云存储临时链接" bindinput="onStoreInput" data-field="headerImageUrl" />
+      <button class="secondary-upload" bindtap="chooseHeaderImage">选择并裁剪头图</button>
+      <image wx:if="{{storeForm.headerImageUrl}}" class="header-preview" src="{{storeForm.headerImageUrl}}" mode="aspectFill" />
+      <view class="field-label">点单文案</view>
+      <input class="input" value="{{storeForm.slogan}}" bindinput="onStoreInput" data-field="slogan" />
+      <button class="primary-btn save-store" loading="{{savingStore}}" disabled="{{savingStore}}" bindtap="saveStoreConfig">保存门店配置</button>
+    </admin-form-section>
+
+    <admin-form-section title="桌码管理" desc="选择桌号后生成对应桌码，供下载或打印">
+      <view class="qr-card">
+        <picker range="{{tables}}" range-key="tableNo" value="{{tableIndex}}" bindchange="chooseTable">
+          <view class="qr-title">{{tableNo}}桌桌码</view>
+        </picker>
+        <image wx:if="{{qrUrl}}" class="qr-image" src="{{qrUrl}}" mode="aspectFit" />
+        <view wx:else class="qr"><view>{{tableNo}}</view></view>
+        <view class="hint">扫码进入：菜单页 · scene={{scene}}</view>
+      </view>
+      <view class="actions">
+        <button class="primary-btn" loading="{{generating}}" bindtap="generateQr">生成</button>
+        <button class="primary-btn" bindtap="downloadQr">下载</button>
+        <button class="primary-btn secondary-btn" bindtap="printQr">打印</button>
+      </view>
+    </admin-form-section>
+  </view>
+</view>

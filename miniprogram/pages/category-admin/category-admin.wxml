@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="brand-head" style="{{brandHeadStyle}}">
+    <view class="brand-title">分类管理</view>
+    <view class="brand-subtitle">顾客菜单左侧分类</view>
+  </view>
+  <view class="content">
+    <view wx:for="{{categories}}" wx:key="_id" class="card cat-card">
+      <view class="cat-head">
+        <input class="cat-name-input" value="{{item.name}}" data-index="{{index}}" data-field="name" bindinput="onInput" />
+        <input class="cat-sort-input" type="number" value="{{item.sort}}" data-index="{{index}}" data-field="sort" bindinput="onInput" />
+      </view>
+      <view class="cat-desc">{{item.enabledText}}</view>
+      <view class="cat-actions">
+        <button class="small-btn save" data-index="{{index}}" bindtap="saveCategory">保存</button>
+        <button class="small-btn toggle" data-index="{{index}}" bindtap="toggleCategory">{{item.enabledAction}}</button>
+        <button class="small-btn quiet" data-index="{{index}}" bindtap="deleteCategory">删除</button>
+      </view>
+    </view>
+    <button class="primary-btn" bindtap="addCategory">新增分类</button>
+  </view>
+</view>

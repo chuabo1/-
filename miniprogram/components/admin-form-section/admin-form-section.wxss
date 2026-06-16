@@ -1,0 +1,26 @@
+.section {
+  padding: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.section-head {
+  min-height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.section-title {
+  color: var(--color-ink);
+  font-size: 28rpx;
+  line-height: 44rpx;
+  font-weight: 600;
+}
+
+.section-desc {
+  margin-top: 4rpx;
+  color: var(--color-muted);
+  font-size: 20rpx;
+  line-height: 32rpx;
+}

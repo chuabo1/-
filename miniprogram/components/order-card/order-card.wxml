@@ -1,0 +1,26 @@
+<view class="order-card card {{statusClass}}">
+  <view class="order-head-row">
+    <view class="badge status-badge">{{statusText}}</view>
+    <view class="order-table">
+      <text class="table-number">{{tableNo}}</text>
+      <text class="table-unit">桌</text>
+    </view>
+    <view class="order-total">¥{{totalAmount}}</view>
+  </view>
+  <view wx:for="{{orderSections}}" wx:for-item="section" wx:for-index="sectionIndex" wx:key="key" class="order-section">
+    <view class="order-sub-row">
+      <view class="order-meta">{{section.metaText}}</view>
+    </view>
+    <view wx:if="{{section.remark}}" class="order-remark">备注：{{section.remark}}</view>
+    <view wx:if="{{section.items.length}}" class="order-items">
+      <view wx:for="{{section.items}}" wx:for-item="dish" wx:key="key" class="order-item">
+        <text class="order-item-name">{{dish.displayName}}</text>
+        <text class="order-item-qty">x{{dish.quantity}}</text>
+      </view>
+    </view>
+    <view wx:if="{{section.hasActions}}" class="order-actions">
+      <button wx:if="{{section.showConfirm}}" class="primary-btn action" data-index="{{sectionIndex}}" bindtap="onConfirm">确认</button>
+      <button wx:if="{{section.showComplete}}" class="primary-btn secondary-btn action" data-index="{{sectionIndex}}" bindtap="onComplete">完成</button>
+    </view>
+  </view>
+</view>

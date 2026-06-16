@@ -1,0 +1,48 @@
+.content {
+  padding: 32rpx;
+}
+
+.count {
+  color: var(--color-primary);
+  font-size: 24rpx;
+}
+
+.dish-admin-row {
+  padding: 24rpx;
+  margin-bottom: 24rpx;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16rpx;
+  align-items: center;
+}
+
+.dish-admin-name {
+  color: var(--color-ink);
+  font-size: 28rpx;
+  line-height: 40rpx;
+  font-weight: 600;
+}
+
+.dish-admin-sub {
+  margin-top: 4rpx;
+  color: var(--color-muted);
+  font-size: 20rpx;
+  line-height: 32rpx;
+}
+
+.dish-admin-actions {
+  display: flex;
+  gap: 8rpx;
+}
+
+.small-btn {
+  min-height: 56rpx;
+  padding: 0 16rpx;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: var(--color-tag);
+  font-size: 22rpx;
+}

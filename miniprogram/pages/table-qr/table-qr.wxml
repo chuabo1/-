@@ -1,0 +1,26 @@
+<view class="page">
+  <view class="brand-head" style="{{brandHeadStyle}}">
+    <view class="brand-title">桌码管理</view>
+    <view class="brand-subtitle">每桌独立码 · 下载/打印桌贴</view>
+  </view>
+  <view class="content">
+    <view class="card qr-card">
+      <picker range="{{tables}}" range-key="tableNo" value="{{tableIndex}}" bindchange="chooseTable">
+        <view class="qr-title">{{tableNo}}桌桌码</view>
+      </picker>
+      <image wx:if="{{qrUrl}}" class="qr-image" src="{{qrUrl}}" mode="aspectFit" />
+      <view wx:else class="qr"><view>{{tableNo}}</view></view>
+      <view class="hint">扫码进入：菜单页 · scene={{scene}}</view>
+    </view>
+    <view class="card action-card">
+      <view class="action-title">桌码操作</view>
+      <view class="hint">下载 PNG、打印桌贴、重新生成</view>
+      <view class="actions">
+        <button class="primary-btn" loading="{{generating}}" bindtap="generateQr">生成</button>
+        <button class="primary-btn" bindtap="downloadQr">下载</button>
+        <button class="primary-btn secondary-btn" bindtap="printQr">打印</button>
+      </view>
+    </view>
+    <view class="notice">开发备注：每桌码携带桌号参数，扫码后直接进入对应桌号菜单。</view>
+  </view>
+</view>

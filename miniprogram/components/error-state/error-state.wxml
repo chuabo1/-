@@ -1,0 +1,1 @@
+<empty-state icon="!" title="{{title}}" desc="{{desc}}" button-text="{{buttonText}}" bind:action="onRetry" />

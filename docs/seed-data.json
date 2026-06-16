@@ -1,0 +1,29 @@
+{
+  "settings": {
+    "store": {
+      "name": "万万烧烤",
+      "tablePrefix": "堂食点单",
+      "slogan": "炭火刚好，趁热开吃",
+      "headerImageUrl": "",
+      "headerImageFileId": ""
+    }
+  },
+  "tables": [
+    { "_id": "table-01", "tableNo": "01", "scene": "table_01", "enabled": true },
+    { "_id": "table-02", "tableNo": "02", "scene": "table_02", "enabled": true },
+    { "_id": "table-03", "tableNo": "03", "scene": "table_03", "enabled": true }
+  ],
+  "categories": [
+    { "_id": "cat-hot", "name": "必吃强烈\n推荐", "sort": 1, "enabled": true },
+    { "_id": "cat-veg", "name": "心享素菜\n专区", "sort": 2, "enabled": true }
+  ],
+  "dishes": [
+    { "_id": "dish-beef", "categoryId": "cat-hot", "name": "炭烤牛肉串", "price": 6, "unit": "串", "tag": "招牌", "imageKey": "beef", "specs": [], "sort": 1, "enabled": true, "soldOut": false },
+    { "_id": "dish-wing", "categoryId": "cat-hot", "name": "蒜香烤鸡翅", "price": 12, "unit": "份", "tag": "2人推荐", "imageKey": "wing", "specs": ["微辣", "中辣", "加辣"], "sort": 2, "enabled": true, "soldOut": false },
+    { "_id": "dish-egg", "categoryId": "cat-hot", "name": "炸蛋2个", "price": 7, "unit": "份", "tag": "", "imageKey": "egg", "specs": [], "sort": 3, "enabled": true, "soldOut": false },
+    { "_id": "dish-snail", "categoryId": "cat-hot", "name": "招牌田螺鸭脚煲", "price": 58, "unit": "份起", "tag": "热卖", "imageKey": "snail", "specs": ["微辣", "中辣", "加辣"], "sort": 4, "enabled": true, "soldOut": false }
+  ],
+  "staffUsers": [
+    { "_id": "staff-admin", "phone": "13800000000", "password": "123456", "name": "店员", "role": "staff", "enabled": true }
+  ]
+}

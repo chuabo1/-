@@ -1,0 +1,15 @@
+<view class="cart-bar safe-bottom">
+  <view class="cart-main" bindtap="onSubmit">
+    <view class="cart-icon">
+      <text class="cart-icon-symbol">♨</text>
+      <view wx:if="{{count > 0}}" class="bubble">{{count}}</view>
+    </view>
+    <view class="cart-info">
+      <view class="cart-title">{{displayTitle}}</view>
+      <view class="cart-sub">{{displaySub}}</view>
+    </view>
+  </view>
+  <button class="cart-btn {{buttonStateClass}}" bindtap="onSubmit" disabled="{{disabled}}">
+    {{buttonText}}
+  </button>
+</view>

@@ -1,0 +1,51 @@
+.stepper {
+  height: 64rpx;
+  min-width: 164rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10rpx;
+}
+
+.tap-area {
+  width: 56rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-btn {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36rpx;
+  line-height: 42rpx;
+  font-weight: 600;
+}
+
+.minus {
+  border: 3rpx solid #2a2522;
+  color: #2a2522;
+  background: #ffffff;
+}
+
+.plus {
+  color: #ffffff;
+  background: var(--color-primary);
+  box-shadow: var(--shadow-small);
+}
+
+.step-value {
+  min-width: 32rpx;
+  max-width: 56rpx;
+  text-align: center;
+  color: var(--color-ink);
+  font-size: 28rpx;
+  line-height: 44rpx;
+  font-weight: 600;
+  overflow: hidden;
+}

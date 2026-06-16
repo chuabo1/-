@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/table-select/table-select",
+    "pages/menu/menu",
+    "pages/success/success",
+    "pages/staff-login/staff-login",
+    "pages/staff-workbench/staff-workbench",
+    "pages/table-group/table-group",
+    "pages/menu-admin/menu-admin",
+    "pages/store-admin/store-admin",
+    "pages/category-admin/category-admin",
+    "pages/dish-edit/dish-edit",
+    "pages/table-qr/table-qr",
+    "pages/image-cropper/image-cropper"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark"
+  },
+  "sitemapLocation": "sitemap.json"
+}

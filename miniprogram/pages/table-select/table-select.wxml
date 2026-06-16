@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="brand-head" style="{{brandHeadStyle}}">
+    <view class="brand-title" bindlongpress="openStaffLogin">万万烧烤</view>
+    <view class="brand-subtitle">堂食点餐 · 选择桌号后直接下单</view>
+  </view>
+  <view class="content">
+    <view class="page-title">请选择桌号</view>
+    <view class="hint">选择桌号后会直接进入对应菜单</view>
+    <view class="table-grid">
+      <button wx:for="{{tables}}" wx:key="_id" class="table-card {{selectedTable === item.tableNo ? 'active' : ''}}" bindtap="selectTable" data-table="{{item.tableNo}}">
+        {{item.tableNo}}
+      </button>
+    </view>
+    <view class="notice">提示：桌码是正式营业时的快捷入口，手动选桌不需要再次扫码。</view>
+    <button class="primary-btn enter-btn" bindtap="enterMenu">进入菜单</button>
+  </view>
+</view>

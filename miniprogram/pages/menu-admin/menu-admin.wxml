@@ -1,0 +1,28 @@
+<view class="page">
+  <view class="brand-head" style="{{brandHeadStyle}}">
+    <view class="brand-title">菜单管理</view>
+    <view class="brand-subtitle">编辑菜品、价格、规格与上下架</view>
+  </view>
+  <view class="content">
+    <view bindtap="openCategoryAdmin">
+      <admin-form-section title="分类管理" desc="调整左侧菜单分类和排序">
+        <view slot="action" class="count">{{categories.length}}个分类</view>
+      </admin-form-section>
+    </view>
+    <admin-form-section title="菜品管理" desc="编辑图片、价格、规格、推荐标识">
+      <view slot="action" class="count">{{dishes.length}}个菜品</view>
+    </admin-form-section>
+    <view wx:for="{{dishes}}" wx:key="_id" class="card dish-admin-row">
+      <view>
+        <view class="dish-admin-name">{{item.name}}</view>
+        <view class="dish-admin-sub">¥{{item.price}}/{{item.unit}} · {{item.enabledText}} · {{item.soldOutText}}</view>
+      </view>
+      <view class="dish-admin-actions">
+        <button class="small-btn" data-id="{{item._id}}" bindtap="editDish">编辑</button>
+        <button class="small-btn" data-id="{{item._id}}" bindtap="toggleDishEnabled">{{item.enabledAction}}</button>
+        <button class="small-btn" data-id="{{item._id}}" bindtap="toggleDishSoldOut">{{item.soldOutAction}}</button>
+      </view>
+    </view>
+    <button class="primary-btn" bindtap="addDish">新增菜品</button>
+  </view>
+</view>

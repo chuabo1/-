@@ -1,0 +1,5 @@
+<view class="spec-list">
+  <button wx:for="{{optionItems}}" wx:key="label" class="spec-pill {{item.activeClass}}" bindtap="onSelect" data-value="{{item.label}}">
+    {{item.label}}
+  </button>
+</view>

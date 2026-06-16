@@ -1,0 +1,16 @@
+<view class="summary-row {{borderClass}} {{quantityClass}}">
+  <view class="dish-img {{imageClass}}">
+    <image wx:if="{{item.imageUrl}}" class="dish-photo" src="{{item.imageUrl}}" mode="aspectFill" />
+    <block wx:else>
+      <view class="plate"></view>
+      <text class="dish-img-name">{{shortName}}</text>
+    </block>
+  </view>
+  <view class="summary-info">
+    <view class="summary-name">{{displayName}}</view>
+    <view class="summary-price">¥{{displayPrice}}</view>
+  </view>
+  <view wx:if="{{showQuantity}}" class="summary-action">
+    <quantity-stepper value="{{displayQuantity}}" min="{{0}}" bind:change="onQuantityChange" />
+  </view>
+</view>

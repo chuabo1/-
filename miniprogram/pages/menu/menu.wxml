@@ -1,0 +1,87 @@
+<view class="page menu-page">
+  <view class="menu-head" style="{{menuHeadStyle}}">
+    <view class="brand-safe">
+      <view class="brand-row">
+        <view class="logo-badge" bindlongpress="openStaffLogin">SUNIPER<br />TABLE</view>
+        <view class="brand-word">{{storeConfig.name}}</view>
+      </view>
+      <view class="head-meta">
+        <view class="table-pill">{{tableNo}}桌</view>
+        <text>{{storeConfig.tablePrefix}}</text>
+        <text>{{storeConfig.slogan}}</text>
+      </view>
+    </view>
+  </view>
+
+  <error-state wx:if="{{error}}" desc="{{error}}" bind:retry="loadMenu" />
+  <empty-state wx:elif="{{!loading && dishes.length === 0}}" title="暂无可点菜品" desc="请稍后再试或联系店员" />
+  <view wx:else class="menu-layout">
+    <view class="category-list">
+      <button wx:for="{{categories}}" wx:key="_id" class="cat-item {{item.activeClass}}" data-id="{{item._id}}" bindtap="selectCategory">
+        <view wx:if="{{item.cartDotVisible}}" class="cat-dot">{{cartCount}}</view>
+        <text>{{item.name}}</text>
+      </button>
+    </view>
+    <scroll-view scroll-y class="dish-list">
+      <view class="section-title">
+        <text class="section-title-text">{{activeCategoryTitle}}</text>
+        <text wx:if="{{showHotBadge}}" class="hot-badge">HOT</text>
+      </view>
+      <dish-row wx:for="{{visibleDishes}}" wx:key="_id" dish="{{item}}" quantity="{{item.quantityInCart}}" bind:add="addDish" bind:spec="openSpec" bind:quantitychange="changeDishQuantity" />
+    </scroll-view>
+  </view>
+
+  <cart-bar count="{{cartCount}}" total="{{cartTotal}}" disabled="{{cartDisabled}}" button-text="{{cartButtonText}}" bind:submit="openCart" />
+
+  <bottom-sheet visible="{{specVisible}}" title="{{selectedDishTitle}}" height="{{specSheetHeight}}" footer="{{true}}" bind:close="closeSpec">
+    <product-summary-row item="{{selectedSummary}}" />
+    <view class="field-label">规格</view>
+    <spec-selector options="{{selectedSpecOptions}}" value="{{selectedSpec}}" bind:change="changeSpec" />
+    <view class="spec-quantity-row">
+      <view class="field-label spec-quantity-label">数量</view>
+      <quantity-stepper value="{{specQuantity}}" min="{{1}}" bind:change="changeSpecQuantity" />
+    </view>
+    <view slot="footer" class="sheet-cart">
+      <view>
+        <view class="sheet-price">¥{{selectedDish.price}}</view>
+        <view class="sheet-sub">已选{{selectedSpec}}</view>
+      </view>
+      <button class="primary-btn" bindtap="confirmSpec">加入购物车</button>
+    </view>
+  </bottom-sheet>
+
+  <bottom-sheet visible="{{cartVisible}}" title="已选{{cartCount}}件商品" close-text="收起" height="{{cartSheetHeight}}" footer="{{true}}" bind:close="closeCart">
+    <view class="cart-items">
+      <product-summary-row wx:for="{{cartItems}}" wx:key="key" item="{{item}}" show-quantity="{{true}}" border="{{true}}" bind:quantitychange="changeCartQuantity" />
+      <view class="cart-items-tail"></view>
+    </view>
+    <view slot="footer" class="cart-drawer-footer">
+      <view class="cart-footer-left">
+        <button class="clear-cart-btn" bindtap="clearCart">清空</button>
+      </view>
+      <view class="confirm-total">合计 ¥{{cartTotal}}</view>
+      <button class="primary-btn" bindtap="openConfirm">提交</button>
+    </view>
+  </bottom-sheet>
+
+  <bottom-sheet visible="{{confirmVisible}}" title="确认下单" close-text="返回修改" footer="{{true}}" bind:close="closeConfirm">
+    <view class="confirm-card card">
+      <view class="confirm-card-head">
+        <text>{{tableNo}}桌</text>
+        <text class="dine-in">堂食</text>
+      </view>
+      <view class="confirm-order-no">订单号将自动生成</view>
+    </view>
+    <view class="field-label">整单备注</view>
+    <input class="input" value="{{remark}}" placeholder="如：少辣，不要葱" bindinput="onRemarkInput" />
+    <view class="confirm-line" wx:for="{{cartItems}}" wx:key="key">
+      <text>{{item.displayName}}</text>
+      <text>x{{item.quantity}}</text>
+      <text>¥{{item.subtotal}}</text>
+    </view>
+    <view slot="footer" class="sheet-cart confirm-bottom">
+      <view class="confirm-total">合计 ¥{{cartTotal}}</view>
+      <button class="primary-btn confirm-submit" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitOrder">确认下单</button>
+    </view>
+  </bottom-sheet>
+</view>

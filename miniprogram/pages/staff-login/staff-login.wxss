@@ -1,0 +1,21 @@
+.form {
+  padding: 32rpx;
+}
+
+.page-title {
+  color: var(--color-ink);
+  font-size: 36rpx;
+  line-height: 48rpx;
+  font-weight: 600;
+}
+
+.hint {
+  margin-top: 8rpx;
+  color: var(--color-muted);
+  font-size: 20rpx;
+  line-height: 32rpx;
+}
+
+.login-btn {
+  margin-top: 40rpx;
+}

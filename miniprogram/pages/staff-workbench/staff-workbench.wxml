@@ -1,0 +1,22 @@
+<view class="page admin-page">
+  <view class="brand-head" style="{{brandHeadStyle}}">
+    <view class="brand-title">订单工作台</view>
+    <view class="brand-subtitle">新订单优先 · 备注高亮 · 手机端操作</view>
+  </view>
+  <view class="content">
+    <view class="notice">新订单提醒：声音/震动可接入，备注需优先查看</view>
+    <view class="admin-nav">
+      <button class="admin-nav-item active">订单</button>
+      <button class="admin-nav-item" bindtap="openMenuAdmin">菜单</button>
+      <button class="admin-nav-item" bindtap="openStoreAdmin">门店</button>
+    </view>
+    <view class="status-tabs">
+      <button wx:for="{{statusTabs}}" wx:key="value" class="status-tab {{item.activeClass}}" data-status="{{item.value}}" bindtap="switchStatus">{{item.label}}</button>
+    </view>
+    <error-state wx:if="{{error}}" desc="{{error}}" bind:retry="loadOrders" />
+    <empty-state wx:elif="{{!loading && orders.length === 0}}" title="暂无新订单" desc="新订单会自动出现在这里" />
+    <block wx:else>
+      <order-card wx:for="{{orders}}" wx:key="_id" order="{{item}}" bind:confirm="confirmOrder" bind:complete="completeOrder" />
+    </block>
+  </view>
+</view>

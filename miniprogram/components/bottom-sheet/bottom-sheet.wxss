@@ -1,0 +1,76 @@
+.sheet-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}
+
+.sheet-mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.56);
+}
+
+.sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 520rpx;
+  max-height: 92vh;
+  padding: 32rpx 32rpx 0;
+  border-radius: 16rpx 16rpx 0 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: var(--shadow-medium);
+}
+
+.sheet-head {
+  flex: 0 0 auto;
+  min-height: 48rpx;
+  padding-bottom: 32rpx;
+  margin-bottom: 32rpx;
+  border-bottom: 1rpx solid rgba(34, 34, 34, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sheet-title {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-ink);
+  font-size: 30rpx;
+  line-height: 44rpx;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sheet-close {
+  flex: 0 0 auto;
+  min-width: 96rpx;
+  color: var(--color-muted);
+  font-size: 20rpx;
+  line-height: 32rpx;
+  text-align: right;
+}
+
+.sheet-body {
+  flex: 1;
+  min-height: 0;
+  padding-bottom: 32rpx;
+}
+
+.sheet-body.has-footer {
+  padding-bottom: 128rpx;
+}
+
+.sheet-footer {
+  flex: 0 0 auto;
+  margin: 0 -32rpx;
+  padding: 16rpx 32rpx calc(16rpx + env(safe-area-inset-bottom));
+  border-top: 1rpx solid rgba(34, 34, 34, 0.04);
+  background: #ffffff;
+}

@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="brand-head" style="{{brandHeadStyle}}">
+    <view class="brand-title">编辑菜品</view>
+    <view class="brand-subtitle">基础字段 + 必要规格</view>
+  </view>
+  <view class="form">
+    <view class="product-head">
+      <view class="fake-img" bindtap="chooseDishImage">
+        <image wx:if="{{form.imageUrl}}" class="dish-photo" src="{{form.imageUrl}}" mode="aspectFill" />
+        <block wx:else>
+          <view></view>
+          <text>鸡翅</text>
+        </block>
+      </view>
+      <view>
+        <view class="product-name">{{form.name}}</view>
+        <view class="hint">点击图片选择并裁剪，推荐 1:1 方图</view>
+      </view>
+    </view>
+    <view class="field-label">分类</view>
+    <picker range="{{categories}}" range-key="name" bindchange="chooseCategory">
+      <view class="input picker-input">{{form.categoryName}}</view>
+    </picker>
+    <view class="field-label">菜名</view>
+    <input class="input" value="{{form.name}}" bindinput="onInput" data-field="name" />
+    <view class="two-col">
+      <view>
+        <view class="field-label">价格</view>
+        <input class="input" type="digit" value="{{form.price}}" bindinput="onInput" data-field="price" />
+      </view>
+      <view>
+        <view class="field-label">单位</view>
+        <input class="input" value="{{form.unit}}" bindinput="onInput" data-field="unit" />
+      </view>
+    </view>
+    <view class="field-label">标签</view>
+    <input class="input" value="{{form.tag}}" placeholder="如：招牌 / 热卖 / 2人推荐" bindinput="onInput" data-field="tag" />
+    <view class="field-label">图片样式</view>
+    <input class="input" value="{{form.imageKey}}" placeholder="beef / wing / egg / snail；也可上传本地图片" bindinput="onInput" data-field="imageKey" />
+    <view class="field-label">规格</view>
+    <input class="input" value="{{form.specs}}" bindinput="onInput" data-field="specs" />
+    <view class="tags">
+      <button class="badge" bindtap="toggleSoldOut">{{soldOutText}}</button>
+      <button class="badge ok" bindtap="toggleEnabled">{{enabledText}}</button>
+    </view>
+    <button class="primary-btn save-btn" loading="{{saving}}" disabled="{{saving}}" bindtap="save">保存菜品</button>
+  </view>
+</view>

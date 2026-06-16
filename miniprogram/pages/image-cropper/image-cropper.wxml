@@ -1,0 +1,31 @@
+<view class="page crop-page">
+  <view class="crop-head" style="{{brandHeadStyle}}">
+    <view class="crop-title">裁剪图片</view>
+    <view class="crop-subtitle">{{ratioText}} · 拖动图片选择区域，滑动调整大小</view>
+  </view>
+
+  <view class="crop-stage" style="height: {{stageHeight}}px;" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove">
+    <view class="move-image" style="left: {{imageX}}px; top: {{imageY}}px; width: {{displayWidth}}px; height: {{displayHeight}}px;">
+      <image class="source-image" src="{{src}}" mode="aspectFill" />
+    </view>
+    <view class="shade top" style="height: {{cropY}}px;"></view>
+    <view class="shade bottom" style="top: {{cropBottom}}px;"></view>
+    <view class="shade left" style="top: {{cropY}}px; width: {{cropX}}px; height: {{cropHeight}}px;"></view>
+    <view class="shade right" style="top: {{cropY}}px; left: {{cropRight}}px; height: {{cropHeight}}px;"></view>
+    <view class="crop-box" style="left: {{cropX}}px; top: {{cropY}}px; width: {{cropWidth}}px; height: {{cropHeight}}px;"></view>
+  </view>
+
+  <view class="crop-controls safe-bottom">
+    <view class="zoom-row">
+      <text>缩小</text>
+      <slider min="100" max="240" value="{{zoomValue}}" activeColor="#b94724" block-size="20" bindchanging="onZoom" bindchange="onZoom" />
+      <text>放大</text>
+    </view>
+    <view class="crop-actions">
+      <button class="cancel-btn" bindtap="cancel">取消</button>
+      <button class="primary-btn confirm-btn" loading="{{saving}}" disabled="{{saving}}" bindtap="confirm">使用这个区域</button>
+    </view>
+  </view>
+
+  <canvas canvas-id="cropCanvas" class="crop-canvas" style="width: {{outputWidth}}px; height: {{outputHeight}}px;"></canvas>
+</view>

@@ -1,0 +1,71 @@
+.content {
+  padding: 32rpx;
+}
+
+.cat-card {
+  padding: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.cat-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 128rpx;
+  gap: 16rpx;
+  align-items: center;
+}
+
+.cat-desc {
+  color: var(--color-muted);
+  font-size: 20rpx;
+  font-weight: 400;
+}
+
+.cat-desc {
+  margin-top: 8rpx;
+  line-height: 32rpx;
+}
+
+.cat-name-input,
+.cat-sort-input {
+  min-height: 72rpx;
+  padding: 0 24rpx;
+  border: 1rpx solid var(--color-line);
+  border-radius: 16rpx;
+  color: var(--color-ink);
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+
+.cat-actions {
+  margin-top: 16rpx;
+  display: flex;
+  gap: 16rpx;
+}
+
+.small-btn {
+  min-height: 56rpx;
+  padding: 0 24rpx;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: var(--color-tag);
+  font-size: 22rpx;
+  line-height: normal;
+}
+
+.small-btn.save {
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
+.small-btn.toggle {
+  color: var(--color-primary-dark);
+  background: var(--color-tag);
+}
+
+.small-btn.quiet {
+  color: var(--color-muted);
+  background: #f7f7f7;
+}
