@@ -88,3 +88,9 @@
   align-items: flex-end;
   justify-content: flex-end;
 }
+
+.row-stepper {
+  width: 176rpx;
+  height: 64rpx;
+  flex: 0 0 auto;
+}

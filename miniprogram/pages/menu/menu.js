@@ -22,6 +22,11 @@ function categoryTitle(name) {
   return String(name || "").replace(/\s+/g, "");
 }
 
+function cartSheetHeight(itemCount) {
+  const rowsHeight = Math.max(1, itemCount) * 136;
+  return Math.min(1080, Math.max(720, 500 + rowsHeight));
+}
+
 Page({
   data: {
     tableNo: "03",
@@ -46,7 +51,7 @@ Page({
     cartTotal: 0,
     cartDisabled: true,
     cartButtonText: "先选菜",
-    cartSheetHeight: 480,
+    cartSheetHeight: cartSheetHeight(0),
     loading: true,
     error: "",
     specVisible: false,
@@ -58,7 +63,7 @@ Page({
     selectedSummary: {},
     selectedSpec: "",
     specQuantity: 1,
-    specSheetHeight: 640,
+    specSheetHeight: 720,
     remark: "",
     submitting: false,
     validating: false
@@ -182,7 +187,7 @@ Page({
       selectedSummary: { ...dish, quantity: 1 },
       selectedSpec,
       specQuantity: 1,
-      specSheetHeight: Math.min(1040, Math.max(760, 648 + specRows * 88))
+      specSheetHeight: Math.min(1040, Math.max(720, 616 + specRows * 88))
     });
   },
 
@@ -287,7 +292,7 @@ Page({
       cartTotal: sumCart(cartMap),
       cartDisabled: this.data.submitting || nextCartCount === 0,
       cartButtonText: nextCartCount > 0 ? "提交" : "先选菜",
-      cartSheetHeight: Math.min(1120, Math.max(760, 520 + cartItems.length * 144))
+      cartSheetHeight: cartSheetHeight(cartItems.length)
     });
     this.saveCart(cartMap);
     this.updateVisibleDishes();

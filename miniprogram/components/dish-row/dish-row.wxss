@@ -106,6 +106,12 @@
   overflow: visible;
 }
 
+.row-stepper {
+  width: 176rpx;
+  height: 64rpx;
+  flex: 0 0 auto;
+}
+
 .tap-plus {
   width: 48rpx;
   height: 48rpx;

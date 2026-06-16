@@ -11,6 +11,6 @@
     <view class="summary-price">¥{{displayPrice}}</view>
   </view>
   <view wx:if="{{showQuantity}}" class="summary-action">
-    <quantity-stepper value="{{displayQuantity}}" min="{{0}}" bind:change="onQuantityChange" />
+    <quantity-stepper class="row-stepper" value="{{displayQuantity}}" min="{{0}}" bind:change="onQuantityChange" />
   </view>
 </view>

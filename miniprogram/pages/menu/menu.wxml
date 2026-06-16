@@ -39,7 +39,7 @@
     <spec-selector options="{{selectedSpecOptions}}" value="{{selectedSpec}}" bind:change="changeSpec" />
     <view class="spec-quantity-row">
       <view class="field-label spec-quantity-label">数量</view>
-      <quantity-stepper value="{{specQuantity}}" min="{{1}}" bind:change="changeSpecQuantity" />
+      <quantity-stepper class="spec-stepper" value="{{specQuantity}}" min="{{1}}" bind:change="changeSpecQuantity" />
     </view>
     <view slot="footer" class="sheet-cart">
       <view>

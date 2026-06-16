@@ -14,7 +14,7 @@
   <view class="dish-action">
     <button wx:if="{{dish.soldOut}}" class="spec-btn disabled">售罄</button>
     <button wx:elif="{{showSpecButton}}" class="spec-btn" bindtap="onSpec">选规格</button>
-    <quantity-stepper wx:elif="{{showStepper}}" value="{{quantity}}" min="{{0}}" bind:change="onQuantityChange" />
+    <quantity-stepper wx:elif="{{showStepper}}" class="row-stepper" value="{{quantity}}" min="{{0}}" bind:change="onQuantityChange" />
     <button wx:else class="tap-plus" bindtap="onAdd">+</button>
   </view>
 </view>

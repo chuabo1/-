@@ -1,4 +1,5 @@
 .stepper {
+  width: 100%;
   height: 64rpx;
   min-width: 164rpx;
   display: flex;

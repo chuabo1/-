@@ -181,7 +181,7 @@
 .spec-quantity-row {
   min-height: 96rpx;
   margin-top: 24rpx;
-  margin-bottom: 48rpx;
+  margin-bottom: 16rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -193,6 +193,12 @@
 }
 
 .spec-quantity-row .stepper {
+  flex: 0 0 auto;
+}
+
+.spec-stepper {
+  width: 176rpx;
+  height: 64rpx;
   flex: 0 0 auto;
 }
 
@@ -242,11 +248,11 @@
 }
 
 .cart-items {
-  padding-bottom: 0;
+  padding-bottom: 8rpx;
 }
 
 .cart-items-tail {
-  height: 128rpx;
+  height: 32rpx;
 }
 
 .cart-footer-left {
