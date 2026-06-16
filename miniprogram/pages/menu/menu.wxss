@@ -310,11 +310,11 @@
 }
 
 .cart-items {
-  padding-bottom: 8rpx;
+  padding-bottom: 0;
 }
 
 .cart-items-tail {
-  height: 32rpx;
+  height: 0;
 }
 
 .cart-drawer-footer .confirm-total {

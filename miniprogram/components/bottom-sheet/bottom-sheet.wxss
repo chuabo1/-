@@ -88,3 +88,23 @@
   border-top: 1rpx solid rgba(34, 34, 34, 0.04);
   background: #ffffff;
 }
+
+.compact-sheet {
+  min-height: 440rpx;
+  padding-top: 24rpx;
+}
+
+.compact-sheet .sheet-head {
+  padding-bottom: 8rpx;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.compact-sheet .sheet-body,
+.compact-sheet .sheet-body.has-footer {
+  padding-bottom: 0;
+}
+
+.compact-sheet .sheet-footer {
+  border-top: 0;
+}

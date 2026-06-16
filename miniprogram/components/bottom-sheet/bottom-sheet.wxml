@@ -1,6 +1,6 @@
 <view wx:if="{{visible}}" class="sheet-wrap">
   <view class="sheet-mask" bindtap="onClose"></view>
-  <view class="sheet safe-bottom" style="{{heightStyle}}">
+  <view class="sheet safe-bottom {{compactClass}}" style="{{heightStyle}}">
     <view class="sheet-head">
       <text class="sheet-title">{{title}}</text>
       <button wx:if="{{!headerAction}}" class="sheet-close" bindtap="onClose">{{closeText}}</button>

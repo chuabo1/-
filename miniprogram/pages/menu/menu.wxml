@@ -50,7 +50,7 @@
     </view>
   </bottom-sheet>
 
-  <bottom-sheet visible="{{cartVisible}}" title="已选{{cartCount}}件商品" header-action="{{true}}" height="{{cartSheetHeight}}" footer="{{true}}" bind:close="closeCart">
+  <bottom-sheet visible="{{cartVisible}}" title="已选{{cartCount}}件商品" header-action="{{true}}" compact="{{true}}" height="{{cartSheetHeight}}" footer="{{true}}" bind:close="closeCart">
     <button slot="header-action" class="cart-clear-head" bindtap="clearCart">
       <view class="trash-icon">
         <view class="trash-lid"></view>

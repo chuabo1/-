@@ -9,12 +9,14 @@ Component({
     height: { type: Number, optionalTypes: [String], value: "" },
     closeText: { type: String, value: "关闭" },
     headerAction: { type: Boolean, value: false },
+    compact: { type: Boolean, value: false },
     footer: { type: Boolean, value: false }
   },
 
   data: {
     heightStyle: "",
-    bodyClass: ""
+    bodyClass: "",
+    compactClass: ""
   },
 
   observers: {
@@ -29,6 +31,12 @@ Component({
       this.setData({
         heightStyle: `height: ${height}rpx;`,
         bodyClass: this.data.footer ? "has-footer" : ""
+      });
+    },
+
+    compact(compact) {
+      this.setData({
+        compactClass: compact ? "compact-sheet" : ""
       });
     }
   },
