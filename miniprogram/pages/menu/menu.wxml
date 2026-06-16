@@ -50,15 +50,22 @@
     </view>
   </bottom-sheet>
 
-  <bottom-sheet visible="{{cartVisible}}" title="已选{{cartCount}}件商品" close-text="收起" height="{{cartSheetHeight}}" footer="{{true}}" bind:close="closeCart">
+  <bottom-sheet visible="{{cartVisible}}" title="已选{{cartCount}}件商品" header-action="{{true}}" height="{{cartSheetHeight}}" footer="{{true}}" bind:close="closeCart">
+    <button slot="header-action" class="cart-clear-head" bindtap="clearCart">
+      <view class="trash-icon">
+        <view class="trash-lid"></view>
+        <view class="trash-body">
+          <view class="trash-line"></view>
+          <view class="trash-line"></view>
+        </view>
+      </view>
+      <text>清空</text>
+    </button>
     <view class="cart-items">
       <product-summary-row wx:for="{{cartItems}}" wx:key="key" item="{{item}}" show-quantity="{{true}}" border="{{true}}" bind:quantitychange="changeCartQuantity" />
       <view class="cart-items-tail"></view>
     </view>
     <view slot="footer" class="cart-drawer-footer">
-      <view class="cart-footer-left">
-        <button class="clear-cart-btn" bindtap="clearCart">清空</button>
-      </view>
       <view class="confirm-total">合计 ¥{{cartTotal}}</view>
       <button class="primary-btn" bindtap="openConfirm">提交</button>
     </view>

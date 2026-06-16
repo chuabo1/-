@@ -8,6 +8,7 @@ Component({
     title: { type: String, value: "" },
     height: { type: Number, optionalTypes: [String], value: "" },
     closeText: { type: String, value: "关闭" },
+    headerAction: { type: Boolean, value: false },
     footer: { type: Boolean, value: false }
   },
 
