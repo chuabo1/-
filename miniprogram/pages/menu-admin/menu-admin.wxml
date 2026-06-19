@@ -13,7 +13,7 @@
       <view slot="action" class="count">{{dishes.length}}个菜品</view>
     </admin-form-section>
     <view wx:for="{{dishes}}" wx:key="_id" class="card dish-admin-row">
-      <view>
+      <view class="dish-admin-info">
         <view class="dish-admin-name">{{item.name}}</view>
         <view class="dish-admin-sub">¥{{item.price}}/{{item.unit}} · {{item.enabledText}} · {{item.soldOutText}}</view>
       </view>
