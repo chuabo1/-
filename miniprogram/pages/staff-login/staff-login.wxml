@@ -1,6 +1,6 @@
 <view class="page">
   <view class="brand-head" style="{{brandHeadStyle}}">
-    <view class="brand-title">万万烧烤</view>
+    <image class="brand-logo-image" src="/assets/brand/wanwan-logo.svg" mode="aspectFit" />
     <view class="brand-subtitle">手机工作台 · 仅店员使用</view>
   </view>
   <view class="form">

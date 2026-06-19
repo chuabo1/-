@@ -2,7 +2,12 @@
   <view class="menu-head" style="{{menuHeadStyle}}">
     <view class="brand-safe">
       <view class="brand-row">
-        <view class="brand-word" bindlongpress="openStaffLogin">{{storeConfig.name}}</view>
+        <image class="brand-logo-image" src="/assets/brand/wanwan-logo.svg" mode="aspectFit" bindlongpress="openStaffLogin" />
+      </view>
+      <view class="head-meta">
+        <view class="table-pill">{{tableNo}}桌</view>
+        <text>{{storeConfig.tablePrefix}}</text>
+        <text>{{storeConfig.slogan}}</text>
       </view>
     </view>
   </view>

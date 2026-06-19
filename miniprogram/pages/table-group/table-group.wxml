@@ -1,6 +1,6 @@
 <view class="page">
   <view class="brand-head" style="{{brandHeadStyle}}">
-    <view class="brand-title">同桌订单</view>
+    <view class="brand-title">{{tableNo}}桌</view>
     <view class="brand-subtitle">聚合显示同桌多笔加菜单</view>
   </view>
   <view class="content">

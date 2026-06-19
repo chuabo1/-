@@ -1,6 +1,6 @@
 <view class="page">
   <view class="brand-head" style="{{brandHeadStyle}}">
-    <view class="brand-title" bindlongpress="openStaffLogin">万万烧烤</view>
+    <image class="brand-logo-image" src="/assets/brand/wanwan-logo.svg" mode="aspectFit" bindlongpress="openStaffLogin" />
     <view class="brand-subtitle">堂食点餐 · 选择桌号后直接下单</view>
   </view>
   <view class="content">

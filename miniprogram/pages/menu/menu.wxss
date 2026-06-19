@@ -50,6 +50,31 @@
   white-space: nowrap;
 }
 
+.head-meta {
+  margin-top: 16rpx;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  color: #ffe3d5;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.head-meta text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-pill {
+  padding: 8rpx 16rpx;
+  border-radius: var(--radius-pill);
+  color: #ffffff;
+  background: #2a2522;
+  font-weight: 600;
+}
+
 .menu-layout {
   flex: 1;
   min-height: 0;
