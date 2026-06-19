@@ -15,9 +15,9 @@ Page({
   },
 
   async loadCategories() {
-    const { categories } = await api.getMenu();
+    const { storeConfig, categories } = await api.getMenu();
     this.setData({
-      brandHeadStyle: getBrandHeadStyle(),
+      brandHeadStyle: getBrandHeadStyle(0, storeConfig && storeConfig.headerImageUrl),
       categories: categories.map((item) => ({
         ...item,
         nameText: item.name.replace("\n", " "),

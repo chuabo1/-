@@ -39,7 +39,7 @@ Page({
   },
 
   async loadData(dishId) {
-    const { categories, dishes } = await api.getMenu();
+    const { storeConfig, categories, dishes } = await api.getMenu();
     const dish = dishes.find((item) => item._id === dishId);
     const category = dish ? categories.find((item) => item._id === dish.categoryId) : categories[0];
     const form = dish ? {
@@ -62,6 +62,7 @@ Page({
       categoryName: category ? category.name.replace("\n", "") : "必吃强烈推荐"
     };
     this.setData({
+      brandHeadStyle: getBrandHeadStyle(0, storeConfig && storeConfig.headerImageUrl),
       categories,
       form,
       enabledText: form.enabled ? "上架中" : "已下架",

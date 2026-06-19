@@ -30,8 +30,13 @@ function getCapsuleTop() {
   }
 }
 
-function getBrandHeadStyle(extraTop = 0) {
-  return `padding-top: ${getCapsuleTop() + extraTop}px;`;
+function getBrandHeadStyle(extraTop = 0, headerImageUrl = "") {
+  if (typeof extraTop === "string") {
+    headerImageUrl = extraTop;
+    extraTop = 0;
+  }
+  const bg = headerImageUrl ? `background-image: url(${headerImageUrl});` : "";
+  return `${bg} padding-top: ${getCapsuleTop() + extraTop}px;`;
 }
 
 module.exports = {

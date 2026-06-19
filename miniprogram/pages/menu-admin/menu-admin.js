@@ -20,9 +20,9 @@ Page({
   },
 
   async loadData() {
-    const { categories, dishes } = await api.getMenu();
+    const { storeConfig, categories, dishes } = await api.getMenu();
     this.setData({
-      brandHeadStyle: getBrandHeadStyle(),
+      brandHeadStyle: getBrandHeadStyle(0, storeConfig && storeConfig.headerImageUrl),
       categories,
       dishes: dishes.map((dish) => ({
         ...dish,

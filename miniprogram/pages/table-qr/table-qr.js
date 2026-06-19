@@ -17,8 +17,17 @@ Page({
   async onLoad() {
     if (!requireStaff()) return;
     this.setData({ brandHeadStyle: getBrandHeadStyle() });
-    await this.loadTables();
+    await Promise.all([this.loadBrandHead(), this.loadTables()]);
     await this.generateQr();
+  },
+
+  async loadBrandHead() {
+    try {
+      const { storeConfig } = await api.getMenu();
+      this.setData({ brandHeadStyle: getBrandHeadStyle(0, storeConfig && storeConfig.headerImageUrl) });
+    } catch (error) {
+      // Keep the gradient header if store config fails.
+    }
   },
 
   async loadTables() {

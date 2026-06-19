@@ -63,6 +63,8 @@ button::after {
   padding: calc(env(safe-area-inset-top) + 24rpx) 32rpx 32rpx;
   color: #ffffff;
   background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  background-size: cover;
+  background-position: center;
 }
 
 .brand-title {

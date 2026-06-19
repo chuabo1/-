@@ -14,7 +14,16 @@ Page({
       brandHeadStyle: getBrandHeadStyle(),
       selectedTable: app.globalData.tableNo || "03"
     });
-    await this.loadTables();
+    await Promise.all([this.loadBrandHead(), this.loadTables()]);
+  },
+
+  async loadBrandHead() {
+    try {
+      const { storeConfig } = await api.getMenu();
+      this.setData({ brandHeadStyle: getBrandHeadStyle(0, storeConfig && storeConfig.headerImageUrl) });
+    } catch (error) {
+      // Keep the gradient header if store config fails.
+    }
   },
 
   async loadTables() {

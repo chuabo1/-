@@ -18,7 +18,16 @@ Page({
       orderNo: options.orderNo || "03-2148",
       total: Number(options.total || 0)
     });
-    await this.loadOrder(options);
+    await Promise.all([this.loadBrandHead(), this.loadOrder(options)]);
+  },
+
+  async loadBrandHead() {
+    try {
+      const { storeConfig } = await api.getMenu();
+      this.setData({ brandHeadStyle: getBrandHeadStyle(0, storeConfig && storeConfig.headerImageUrl) });
+    } catch (error) {
+      // Keep the gradient header if store config fails.
+    }
   },
 
   async loadOrder(options) {

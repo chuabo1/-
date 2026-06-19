@@ -40,6 +40,7 @@ Page({
   async loadStore() {
     const { storeConfig } = await api.getMenu();
     this.setData({
+      brandHeadStyle: getBrandHeadStyle(0, storeConfig && storeConfig.headerImageUrl),
       storeForm: {
         ...this.data.storeForm,
         ...(storeConfig || {})
@@ -93,6 +94,7 @@ Page({
     const tempFilePath = event.tempFilePath;
     this.setData({
       "storeForm.headerImageUrl": tempFilePath,
+      brandHeadStyle: getBrandHeadStyle(0, tempFilePath),
       hasLocalHeaderPreview: true
     });
     if (!USE_MOCK && wx.cloud && wx.cloud.uploadFile) {

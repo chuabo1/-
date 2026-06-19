@@ -45,9 +45,19 @@ Page({
 
   async onLoad() {
     this.setData({ brandHeadStyle: getBrandHeadStyle() });
+    await this.loadBrandHead();
     if (!this.ensureStaff()) return;
     await this.loadOrders();
     this.startWatch();
+  },
+
+  async loadBrandHead() {
+    try {
+      const { storeConfig } = await api.getMenu();
+      this.setData({ brandHeadStyle: getBrandHeadStyle(0, storeConfig && storeConfig.headerImageUrl) });
+    } catch (error) {
+      // Keep the gradient header if store config fails.
+    }
   },
 
   ensureStaff() {
