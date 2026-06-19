@@ -1,5 +1,6 @@
 .menu-head {
-  min-height: 240rpx;
+  height: 422rpx;
+  min-height: 422rpx;
   padding: calc(env(safe-area-inset-top) + 24rpx) 32rpx 32rpx;
   color: #ffffff;
   background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
