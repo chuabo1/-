@@ -74,10 +74,7 @@ button::after {
 }
 
 .brand-subtitle {
-  margin-top: 8rpx;
-  color: #ffe4d6;
-  font-size: 20rpx;
-  line-height: 32rpx;
+  display: none;
 }
 
 .primary-btn {

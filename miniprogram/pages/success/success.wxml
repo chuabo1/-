@@ -3,10 +3,6 @@
     <view class="brand-row">
       <view class="brand-word">万万烧烤</view>
     </view>
-    <view class="head-meta">
-      <view class="table-pill">{{tableNo}}桌</view>
-      <text>下单成功</text>
-    </view>
   </view>
   <view class="content">
     <view class="success-hero">
