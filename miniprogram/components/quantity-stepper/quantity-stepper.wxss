@@ -20,12 +20,18 @@
   width: 48rpx;
   height: 48rpx;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   font-size: 36rpx;
-  line-height: 42rpx;
+  line-height: 1;
   font-weight: 600;
+}
+
+.step-symbol {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  line-height: 1;
+  transform: translate(-50%, -52%);
 }
 
 .minus {

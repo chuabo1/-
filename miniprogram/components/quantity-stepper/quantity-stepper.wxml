@@ -1,9 +1,9 @@
 <view class="stepper">
   <button class="tap-area" aria-label="减少" bindtap="onMinus" disabled="{{minusDisabled}}">
-    <view class="step-btn minus">−</view>
+    <view class="step-btn minus"><text class="step-symbol">−</text></view>
   </button>
   <text class="step-value">{{value}}</text>
   <button class="tap-area" aria-label="增加" bindtap="onPlus" disabled="{{disabled}}">
-    <view class="step-btn plus">+</view>
+    <view class="step-btn plus"><text class="step-symbol">+</text></view>
   </button>
 </view>
