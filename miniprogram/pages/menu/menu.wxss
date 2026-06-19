@@ -247,13 +247,13 @@
   justify-content: flex-end;
   gap: 8rpx;
   color: var(--color-muted);
-  font-size: 22rpx;
-  line-height: 32rpx;
+  font-size: 20rpx;
+  line-height: 30rpx;
 }
 
 .trash-icon {
-  width: 28rpx;
-  height: 30rpx;
+  width: 24rpx;
+  height: 24rpx;
   position: relative;
   flex: 0 0 auto;
 }
@@ -262,8 +262,8 @@
   position: absolute;
   left: 3rpx;
   top: 2rpx;
-  width: 22rpx;
-  height: 4rpx;
+  width: 18rpx;
+  height: 3rpx;
   border-radius: 4rpx;
   background: var(--color-muted);
 }
@@ -271,9 +271,9 @@
 .trash-lid::before {
   content: "";
   position: absolute;
-  left: 7rpx;
+  left: 6rpx;
   top: -4rpx;
-  width: 8rpx;
+  width: 6rpx;
   height: 4rpx;
   border-radius: 4rpx 4rpx 0 0;
   background: var(--color-muted);
@@ -282,10 +282,10 @@
 .trash-body {
   position: absolute;
   left: 5rpx;
-  top: 8rpx;
-  width: 18rpx;
-  height: 20rpx;
-  border: 3rpx solid var(--color-muted);
+  top: 7rpx;
+  width: 14rpx;
+  height: 16rpx;
+  border: 2rpx solid var(--color-muted);
   border-top: 0;
   border-radius: 0 0 5rpx 5rpx;
   display: flex;
@@ -296,7 +296,7 @@
 
 .trash-line {
   width: 2rpx;
-  height: 12rpx;
+  height: 10rpx;
   border-radius: 2rpx;
   background: var(--color-muted);
 }
@@ -319,8 +319,8 @@
 
 .cart-drawer-footer .confirm-total {
   text-align: right;
-  font-size: 34rpx;
-  line-height: 44rpx;
+  font-size: 32rpx;
+  line-height: 42rpx;
   white-space: nowrap;
 }
 
@@ -329,7 +329,7 @@
   padding: 0 40rpx;
   min-width: 0;
   border-radius: var(--radius-pill);
-  font-size: 30rpx;
+  font-size: 28rpx;
 }
 
 .confirm-card {
