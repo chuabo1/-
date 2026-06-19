@@ -1,11 +1,7 @@
 <view class="page">
   <view class="menu-head" style="{{brandHeadStyle}}">
     <view class="brand-row">
-      <image class="brand-logo-image" src="/assets/brand/wanwan-logo.svg" mode="aspectFit" />
-    </view>
-    <view class="head-meta">
-      <view class="table-pill">{{tableNo}}桌</view>
-      <text>下单成功</text>
+      <view class="brand-word">万万烧烤</view>
     </view>
   </view>
   <view class="content">
