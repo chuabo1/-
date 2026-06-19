@@ -23,7 +23,6 @@
 .brand-row {
   display: flex;
   align-items: center;
-  gap: 16rpx;
 }
 
 .logo-badge {
@@ -44,6 +43,10 @@
   font-size: 44rpx;
   line-height: 64rpx;
   font-weight: 600;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .head-meta {

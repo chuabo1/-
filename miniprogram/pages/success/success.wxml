@@ -1,7 +1,6 @@
 <view class="page">
   <view class="menu-head" style="{{brandHeadStyle}}">
     <view class="brand-row">
-      <view class="logo-badge">SUNIPER<br />TABLE</view>
       <view class="brand-word">万万烧烤</view>
     </view>
     <view class="head-meta">

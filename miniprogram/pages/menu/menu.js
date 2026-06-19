@@ -81,13 +81,13 @@ Page({
   },
 
   initHeaderLayout() {
-    let headerTopPx = 56;
+    let headerTopPx = 36;
     try {
       const capsule = wx.getMenuButtonBoundingClientRect();
-      if (capsule && capsule.bottom) headerTopPx = capsule.bottom + 12;
+      if (capsule && capsule.top) headerTopPx = capsule.top;
     } catch (error) {
       const system = wx.getSystemInfoSync ? wx.getSystemInfoSync() : {};
-      headerTopPx = (system.statusBarHeight || 24) + 48;
+      headerTopPx = (system.statusBarHeight || 24) + 6;
     }
     this.setData({ headerTopPx });
     this.updateMenuHeadStyle(this.data.storeConfig);
@@ -98,7 +98,7 @@ Page({
       ? `background-image: url(${storeConfig.headerImageUrl});`
       : "";
     this.setData({
-      menuHeadStyle: `${bg} padding: ${this.data.headerTopPx - 12}px 32rpx 24rpx;`
+      menuHeadStyle: `${bg} padding: ${this.data.headerTopPx}px 32rpx 24rpx;`
     });
   },
 
