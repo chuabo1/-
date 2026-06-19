@@ -240,7 +240,7 @@
 }
 
 .cart-clear-head {
-  min-height: 48rpx;
+  min-height: 56rpx;
   padding: 0 4rpx 0 12rpx;
   display: flex;
   align-items: center;
@@ -302,10 +302,10 @@
 }
 
 .cart-drawer-footer {
-  min-height: 104rpx;
+  min-height: 120rpx;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 208rpx;
-  gap: 16rpx;
+  grid-template-columns: minmax(0, 1fr) 232rpx;
+  gap: 24rpx;
   align-items: center;
 }
 
@@ -319,15 +319,17 @@
 
 .cart-drawer-footer .confirm-total {
   text-align: right;
-  font-size: 32rpx;
-  line-height: 40rpx;
+  font-size: 34rpx;
+  line-height: 44rpx;
   white-space: nowrap;
 }
 
 .cart-drawer-footer .primary-btn {
-  min-height: 72rpx;
-  padding: 0 32rpx;
+  min-height: 84rpx;
+  padding: 0 40rpx;
   min-width: 0;
+  border-radius: var(--radius-pill);
+  font-size: 30rpx;
 }
 
 .confirm-card {

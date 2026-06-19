@@ -62,7 +62,7 @@
       <text>清空</text>
     </button>
     <view class="cart-items">
-      <product-summary-row wx:for="{{cartItems}}" wx:key="key" item="{{item}}" show-quantity="{{true}}" border="{{true}}" bind:quantitychange="changeCartQuantity" />
+      <product-summary-row wx:for="{{cartItems}}" wx:key="key" item="{{item}}" show-quantity="{{true}}" border="{{true}}" variant="cart" bind:quantitychange="changeCartQuantity" />
       <view class="cart-items-tail"></view>
     </view>
     <view slot="footer" class="cart-drawer-footer">

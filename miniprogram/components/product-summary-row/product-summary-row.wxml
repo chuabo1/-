@@ -1,4 +1,4 @@
-<view class="summary-row {{borderClass}} {{quantityClass}}">
+<view class="summary-row {{borderClass}} {{quantityClass}} {{variantClass}}">
   <view class="dish-img {{imageClass}}">
     <image wx:if="{{item.imageUrl}}" class="dish-photo" src="{{item.imageUrl}}" mode="aspectFill" />
     <block wx:else>
@@ -8,6 +8,7 @@
   </view>
   <view class="summary-info">
     <view class="summary-name">{{displayName}}</view>
+    <view wx:if="{{specVisible}}" class="summary-spec">{{displaySpec}}</view>
     <view class="summary-price">¥{{displayPrice}}</view>
   </view>
   <view wx:if="{{showQuantity}}" class="summary-action">

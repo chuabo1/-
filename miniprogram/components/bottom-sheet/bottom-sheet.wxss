@@ -95,9 +95,9 @@
 }
 
 .compact-sheet .sheet-head {
-  padding-bottom: 8rpx;
-  margin-bottom: 0;
-  border-bottom: 0;
+  padding-bottom: 20rpx;
+  margin-bottom: 4rpx;
+  border-bottom: 1rpx solid rgba(34, 34, 34, 0.06);
 }
 
 .compact-sheet .sheet-body,

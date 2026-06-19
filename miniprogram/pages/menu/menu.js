@@ -23,8 +23,8 @@ function categoryTitle(name) {
 }
 
 function cartSheetHeight(itemCount) {
-  const rowsHeight = Math.max(1, itemCount) * 128;
-  return Math.min(1080, Math.max(440, 300 + rowsHeight));
+  const rowsHeight = Math.max(1, itemCount) * 176;
+  return Math.min(1120, Math.max(520, 300 + rowsHeight));
 }
 
 Page({
